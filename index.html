@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survival Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+  </head>
+  <body>
+
+    <!-- start game box -->
+    <div id="start-box-id" class="start-box">
+      <h1>Start Game</h1>
+      <button class="start-button" onclick="startGame()">Start</button>
+    </div>
+
+    <!-- play area where the game is played  -->
+    <div id="playing-area-id" class="playing-area">
+
+      <div class="buttons-class">
+        <p>Controls</p>
+        <button onclick="moveUp()" class="up-down-button">Up</button>
+        <div class="buttons-class-middle">
+          <button onclick="moveLeft()" class="left-right-button">Left</button>
+          <button onclick="moveRight()" class="left-right-button">Right</button>
+        </div>
+        <button onclick="moveDown()" class="up-down-button">Down</button>
+      </div>
+
+      <button class="stop-button" onclick="stopGame()">Stop</button>
+      
+      <!-- in-play elements -->
+      <div id="character-id" class="character">
+        <img src="assets/angel.png" alt="Angel Image" />
+      </div>
+
+      <div class="obstacles-horizontal obstacle-horizontal">
+        <img src="assets/green_flame.png" alt="Green Flame" />
+      </div>
+
+      <div class="obstacles-vertical obstacle-vertical">
+        <img src="assets/lightning.png" alt="Lightning" />
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

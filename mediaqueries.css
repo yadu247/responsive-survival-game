@@ -1,0 +1,58 @@
+@media (width < 1200px) {
+  .character {
+    width: 120px;
+    height: 110px;
+  }
+  .character img {
+    width: 85px;
+    object-fit: contain;
+  }
+  .obstacles-horizontal img {
+    width: 35px;
+    height: 35px;
+  }
+  .obstacles-vertical img {
+    width: 45px;
+    height: 45px;
+  }
+  .buttons-class {
+    height: 160px;
+    width: 150px;
+  }
+  .score {
+    font-size: 35px;
+  }
+}
+@media (width < 850px) {
+  .character {
+    width: 110px;
+    height: 100px;
+  }
+  .character img {
+    width: 75px;
+    object-fit: contain;
+  }
+  .obstacles-horizontal img {
+    width: 25px;
+    height: 25px;
+  }
+  .obstacles-vertical img {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media (width < 700px) {
+  .buttons-class {
+    width: 140px;
+  }
+}
+@media (width < 550px) {
+  .character {
+    width: 90px;
+    height: 90px;
+  }
+  .character img {
+    width: 80px;
+    object-fit: contain;
+  }
+}

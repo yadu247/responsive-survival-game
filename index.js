@@ -12,6 +12,7 @@ let currentScore = 0;
 function stopGame() {
   document.getElementById('playing-area-id').style.display = 'none';
   document.getElementById('restart-box-id').style.display = 'flex';
+
   clearInterval(trackPosition);
   currentScore = 'Current Score : ' + score;
   document.getElementById('current-score-id').textContent = currentScore;
@@ -196,6 +197,17 @@ function upadatePosition() {
   ) {
     stopGame();
   }
+  //game over when touching border
+  // else if (
+  //   characterLeft <= 5 ||
+  //   characterRight >= 1500 ||
+  //   characterBottom >= 1200 ||
+  //   characterTop <= 5
+  // ) {
+  //   document.getElementById('character-id').style.left = '700px';
+  //   document.getElementById('character-id').style.top = '700px';
+  //   stopGame();
+  // }
 }
 
 //this makes the character move when the button is clicked

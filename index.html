@@ -13,19 +13,30 @@
     <div id="start-box-id" class="start-box">
       <h1>Start Game</h1>
       <button class="start-button" onclick="startGame()">Start</button>
+      <p>Use the Arrow keys in the keyboard to move the character</p>
+      <p>Hold as long as you can without getting hit by the objects</p>
+    </div>
+
+    <!-- Restart box -->
+    <div id="restart-box-id" class="restart-box">
+      <h1>Restart Game</h1>
+      <button class="start-button" onclick="startGame()">Restart</button>
+      <p id="current-score-id" class="current-score">Current Score : 0</p>
     </div>
 
     <!-- play area where the game is played  -->
     <div id="playing-area-id" class="playing-area">
 
-      <div class="buttons-class">
+      <p id="score-id" class="score">0</p>
+
+      <div class="buttons-class"><!-- control buttons -->
         <p>Controls</p>
-        <button onclick="moveUp()" class="up-down-button">Up</button>
+        <button id="up-button" onclick="moveUp()" class="up-down-button">Up</button>
         <div class="buttons-class-middle">
-          <button onclick="moveLeft()" class="left-right-button">Left</button>
-          <button onclick="moveRight()" class="left-right-button">Right</button>
+          <button id="left-button" onclick="moveLeft()" class="left-right-button">Left</button>
+          <button id="right-button" onclick="moveRight()" class="left-right-button">Right</button>
         </div>
-        <button onclick="moveDown()" class="up-down-button">Down</button>
+        <button id="down-button" onclick="moveDown()" class="up-down-button">Down</button>
       </div>
 
       <button class="stop-button" onclick="stopGame()">Stop</button>
@@ -35,13 +46,31 @@
         <img src="assets/angel.png" alt="Angel Image" />
       </div>
 
-      <div class="obstacles-horizontal obstacle-horizontal">
+      <!-- horizontal objects -->
+      <div id="obstacle-horizontal-1-id" class="obstacles-horizontal obstacle-horizontal-1">
+        <img src="assets/green_flame.png" alt="Green Flame" />
+      </div>
+      <div id="obstacle-horizontal-2-id" class="obstacles-horizontal obstacle-horizontal-2">
+        <img src="assets/green_flame.png" alt="Green Flame" />
+      </div>
+      <div id="obstacle-horizontal-3-id" class="obstacles-horizontal obstacle-horizontal-3">
         <img src="assets/green_flame.png" alt="Green Flame" />
       </div>
 
-      <div class="obstacles-vertical obstacle-vertical">
+      <!-- vertical objects -->
+      <div id="obstacle-vertical-1-id" class="obstacles-vertical obstacle-vertical-1">
         <img src="assets/lightning.png" alt="Lightning" />
       </div>
+      <div id="obstacle-vertical-2-id" class="obstacles-vertical obstacle-vertical-2">
+        <img src="assets/lightning.png" alt="Lightning" />
+      </div>
+      <div id="obstacle-vertical-3-id" class="obstacles-vertical obstacle-vertical-3">
+        <img src="assets/lightning.png" alt="Lightning" />
+      </div>
+      <div id="obstacle-vertical-4-id" class="obstacles-vertical obstacle-vertical-4">
+        <img src="assets/lightning.png" alt="Lightning" />
+      </div>
+
       </div>
     </div>
   </body>

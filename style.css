@@ -3,10 +3,13 @@
 }
 body {
   background-color: black;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+/* start box  */
 .start-box {
   width: 60vw;
-  height: 40vh;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,16 +22,17 @@ body {
   position: absolute;
   color: white;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  top: 30vh;
+  top: 25vh;
   left: 20vw;
 }
 .start-button {
-  padding: 10px;
+  padding: 0.5rem 1rem;
   font-size: medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 .stop-button {
-  padding: 10px;
+  padding: 0.5rem 1rem;
   font-size: medium;
   font-family: Georgia, 'Times New Roman', Times, serif;
   position: absolute;
@@ -36,32 +40,10 @@ body {
   top: 10px;
 }
 
-.playing-area {
-  width: 100%;
-  height: 100%;
-  background-image: url('assets/hell_background.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: absolute;
-  display: none;
-}
-
-.character {
-  width: fit-content;
-  height: fit-content;
-  background-color: aqua;
-  position: absolute;
-  top: calc(50vh);
-  left: calc(50vw - 50px);
-}
-.character img {
-  width: 100px;
-  object-fit: contain;
-}
-
+/* in-screen button control  */
 .buttons-class {
   position: absolute;
+  z-index: 1;
   left: 85%;
   top: 75%;
   height: 160px;
@@ -70,8 +52,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: beige;
+  background-color: rgb(255, 255, 255);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  border-radius: 10%;
 }
 .buttons-class button {
   border-radius: 50%;
@@ -88,11 +71,64 @@ body {
   width: 50px;
 }
 
+.restart-box {
+  width: 60vw;
+  height: 50vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-image: url('assets/hell_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  top: 25vh;
+  left: 20vw;
+}
+.current-score {
+  font-size: 25px;
+}
+
+/* play area  */
+.playing-area {
+  width: 100%;
+  height: 100%;
+  background-image: url('assets/hell_background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  display: none;
+}
+.score {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 50px;
+  color: rgb(255, 255, 255);
+}
+
+/* game elements  */
+.character {
+  width: 135px;
+  height: 125px;
+  position: absolute;
+  top: calc(50vh);
+  left: calc(50vw - 50px);
+}
+.character img {
+  width: 100px;
+  object-fit: contain;
+}
+
 .obstacles-horizontal {
   position: absolute;
   width: fit-content;
   height: fit-content;
-  background-color: rgb(212, 255, 0);
 }
 .obstacles-horizontal img {
   width: 40px;
@@ -103,23 +139,22 @@ body {
   position: absolute;
   width: fit-content;
   height: fit-content;
-  background-color: rgb(212, 255, 0);
 }
 .obstacles-vertical img {
   width: 50px;
   height: 50px;
 }
 
-.obstacle-horizontal {
+.obstacle-horizontal-1 {
   opacity: 0;
-  transform: translate(0, 200px);
-  animation-name: obstacle-horizontal;
-  animation-duration: 6s;
+  transform: translate(0, 20vh);
+  animation-name: obstacle-horizontal-1;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-@keyframes obstacle-horizontal {
+@keyframes obstacle-horizontal-1 {
   0% {
-    transform: translate(0, 200px);
+    transform: translate(0, 20vh);
   }
   0.1% {
     opacity: 1;
@@ -128,21 +163,65 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(calc(100vw - 40px), 200px);
+    transform: translate(calc(100vw - 40px), 20vh);
+    opacity: 0;
+  }
+}
+.obstacle-horizontal-2 {
+  opacity: 0;
+  transform: translate(0, 245vh);
+  animation-name: obstacle-horizontal-2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes obstacle-horizontal-2 {
+  0% {
+    transform: translate(0, 45vh);
+  }
+  0.1% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(100vw - 40px), 45vh);
+    opacity: 0;
+  }
+}
+.obstacle-horizontal-3 {
+  opacity: 0;
+  transform: translate(0, 75vh);
+  animation-name: obstacle-horizontal-3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes obstacle-horizontal-3 {
+  0% {
+    transform: translate(0, 75vh);
+  }
+  0.1% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(100vw - 40px), 75vh);
     opacity: 0;
   }
 }
 
-.obstacle-vertical {
+.obstacle-vertical-1 {
   opacity: 0;
-  transform: translate(400px, 0);
-  animation-name: obstacle-vertical;
-  animation-duration: 5s;
+  transform: translate(20vw, 0);
+  animation-name: obstacle-vertical-1;
+  animation-duration: 3s;
   animation-iteration-count: infinite;
 }
-@keyframes obstacle-vertical {
+@keyframes obstacle-vertical-1 {
   0% {
-    transform: translate(400px, 0);
+    transform: translate(20vw, 0);
   }
   0.1% {
     opacity: 1;
@@ -151,7 +230,73 @@ body {
     opacity: 1;
   }
   100% {
-    transform: translate(400px, calc(100vh - 55px));
+    transform: translate(20vw, calc(100vh - 55px));
+    opacity: 0;
+  }
+}
+.obstacle-vertical-2 {
+  opacity: 0;
+  transform: translate(40vw, 0);
+  animation-name: obstacle-vertical-2;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes obstacle-vertical-2 {
+  0% {
+    transform: translate(40vw, 0);
+  }
+  0.1% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(40vw, calc(100vh - 55px));
+    opacity: 0;
+  }
+}
+.obstacle-vertical-3 {
+  opacity: 0;
+  transform: translate(60vw, 0);
+  animation-name: obstacle-vertical-3;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+@keyframes obstacle-vertical-3 {
+  0% {
+    transform: translate(60vw, 0);
+  }
+  0.1% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(60vw, calc(100vh - 55px));
+    opacity: 0;
+  }
+}
+.obstacle-vertical-4 {
+  opacity: 0;
+  transform: translate(80vw, 0);
+  animation-name: obstacle-vertical-4;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+@keyframes obstacle-vertical-4 {
+  0% {
+    transform: translate(80vw, 0);
+  }
+  0.1% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(80vw, calc(100vh - 55px));
     opacity: 0;
   }
 }
